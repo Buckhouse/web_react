@@ -15,17 +15,15 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
-        <div className="navbar-logo">
-          <a href="/">Your Logo</a>
-        </div>
+      
         
         {/* Desktop Menu */}
         <ul className="navbar-menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/contact">Contact</a></li>
+        <li><a href="/">✎ Art</a></li>
+          <li><a href="/design">☎ 24-Hour Hotline</a></li>
+          <li><a href="/library">📖 library</a></li>
+          <li><a href="/film">🎬 Film</a></li>
+          <li><a href="/about">👤 Buckhouse</a></li>
         </ul>
         
         {/* Hamburger Icon */}
@@ -37,10 +35,10 @@ function Navbar() {
         
         {/* Mobile Menu */}
         <ul className={`navbar-mobile-menu ${isOpen ? 'active' : ''}`}>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/design">☎ 24-Hour Hotline</a></li>
+          <li><a href="/library">📖 library</a></li>
+          <li><a href="/film">🎬 Film</a></li>
+          <li><a href="/about">👤 Buckhouse</a></li>
         </ul>
       </div>
     </nav>

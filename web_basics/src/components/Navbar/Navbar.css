@@ -6,9 +6,10 @@
   }
   
   /* Navbar container */
+  /* Navbar container */
 .navbar {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--semi-bg-color); 
+    color: var(--text-color);
     height: var(--navbar-height);
     width: 100%;
     position: fixed;
@@ -17,25 +18,17 @@
     z-index: 1000;
     font-family: var(--menu-font-family);
     text-transform: uppercase;
-    }
-    
-    .navbar-container {
+  }
+  
+  .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Change from space-between to center */
     align-items: center;
     height: 100%;
     padding: 0 var(--spacing-xl);
     max-width: var(--container-width);
     margin: 0 auto;
-    }
-    
-    .navbar-logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: var(--menu-font-family);
-    }
+  }
   
   /* Desktop menu */
   .navbar-menu {
@@ -44,18 +37,18 @@
   }
   
   .navbar-menu li {
-    margin-left: 2rem;
+    margin: 0 1rem; /* Change from margin-left to margin on both sides */
   }
   
   .navbar-menu a {
-    color: white;
+    color: var(--text-color); /* Changed to text-color */
     text-decoration: none;
     font-size: 1rem;
-    transition: color 0.3s;
+    transition: color var(--transition-normal);
   }
   
   .navbar-menu a:hover {
-    color: #61dafb; /* React blue color */
+    color: var(--hover-color); /* Changed to hover-color */
   }
   
   /* Hamburger icon */
@@ -71,7 +64,7 @@
   .navbar-hamburger span {
     width: 100%;
     height: 3px;
-    background-color: white;
+    background-color: var(--text-color); /* Fixed: missing parenthesis and changed to text-color */
     border-radius: 10px;
   }
   
@@ -79,16 +72,16 @@
   .navbar-mobile-menu {
     display: none;
     position: absolute;
-    top: 70px;
+    top: var(--navbar-height); /* Changed to use variable */
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: var(--primary-color); /* Changed to primary-color */
     flex-direction: column;
     list-style: none;
     padding: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height var(--transition-normal);
   }
   
   .navbar-mobile-menu.active {
@@ -103,19 +96,26 @@
   }
   
   .navbar-mobile-menu a {
-    color: white;
+    color: var(--bg-white); /* Changed for mobile dropdown menu text color */
     text-decoration: none;
     font-size: 1rem;
+    text-transform: uppercase; /* Added for consistency */
   }
   
   /* Media Queries for Responsive Design */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .navbar-menu {
       display: none;
     }
     
     .navbar-hamburger {
       display: flex;
+      position: absolute; /* Position it */
+      right: var(--spacing-xl); /* Align to the right */
+    }
+    
+    .navbar-container {
+      justify-content: center; /* Keep it centered */
     }
     
     .navbar-mobile-menu {

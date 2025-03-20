@@ -45,7 +45,6 @@
     src: url('../fonts/Rosart-Regular.woff2') format('woff2');
 }
 
-/* Add your other font faces... */
 
 /* Design Tokens */
 :root {
@@ -68,7 +67,9 @@
     
     /* UI Colors */
     --bg-white-half: #fcfbf6; 
-    --bg-white: #f9f7f2;
+    --bg-white: #E5E2E1;
+    --semi-bg-color: #f1efee;
+
     --primary-color: #2c3e50;
     --secondary-color: #2c3e50;
     --text-color: #333;
@@ -90,7 +91,7 @@
     
     /* Layout */
     --container-width: 1200px;
-    --navbar-height: 70px;
+    --navbar-height: 60px;
     
     /* Transitions */
     --transition-fast: 0.2s ease;
