@@ -1,16 +1,22 @@
-import Navbar from './components/Navbar/Navbar'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Gallery from './components/Gallery/Gallery';
+import Navbar from './components/Navbar/Navbar'; 
 
-function App() {
+import './App.css';
+
+const App: React.FC = () => {
   return (
-    <>
+    <Router>
       <Navbar />
       <div className="content">
-        <h1>Welcome to My React App</h1>
-        <p>This is my first React component - a responsive navbar!</p>
+        <Routes>
+          <Route path="/" element={<Gallery />} />
+          {/* Add other routes here as needed */}
+        </Routes>
       </div>
-    </>
-  )
-}
+    </Router>
+  );
+};
 
-export default App
+export default App;
