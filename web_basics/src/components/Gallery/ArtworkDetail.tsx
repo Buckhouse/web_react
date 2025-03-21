@@ -1,3 +1,5 @@
+// src/components/Gallery/ArtworkDetail.tsx
+
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useGallery from './useGallery';
@@ -9,38 +11,37 @@ const ArtworkDetail: React.FC = () => {
   const { artworks } = useGallery();
 
   const currentIndex = artworks.findIndex((art) => art.id === id);
-  const artwork = artworks[currentIndex];
+  const currentArtwork = artworks[currentIndex];
 
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [visibleArtwork, setVisibleArtwork] = useState(artwork);
+  const [previousArtwork, setPreviousArtwork] = useState<typeof currentArtwork | null>(null);
+  const [transitioning, setTransitioning] = useState(false);
 
   useEffect(() => {
-    if (!artwork || artwork.id === visibleArtwork?.id) return;
+    if (!currentArtwork) return;
 
-    setIsTransitioning(true);
+    setPreviousArtwork(currentArtwork);
+    setTransitioning(true);
+
     const timeout = setTimeout(() => {
-      setVisibleArtwork(artwork);
-      setIsTransitioning(false);
-    }, 300); // match fade duration
+      setPreviousArtwork(null);
+      setTransitioning(false);
+    }, 300);
 
     return () => clearTimeout(timeout);
-  }, [artwork]);
+  }, [currentArtwork]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
-        handlePrevious();
-      } else if (e.key === 'ArrowRight') {
-        handleNext();
-      }
+      if (e.key === 'ArrowLeft') handlePrevious();
+      else if (e.key === 'ArrowRight') handleNext();
     };
+
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentIndex, artworks]);
 
   if (!artworks.length) return null;
-  if (!artwork) return <p>Artwork not found.</p>;
-  if (!visibleArtwork) return null;
+  if (!currentArtwork) return <p>Artwork not found.</p>;
 
   const handlePrevious = () => {
     const prevIndex = (currentIndex - 1 + artworks.length) % artworks.length;
@@ -64,12 +65,29 @@ const ArtworkDetail: React.FC = () => {
         <button onClick={handleNext}>Next →</button>
       </div>
 
-      <div className={`artwork-detail ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
-        <img src={visibleArtwork.imageURL} alt={visibleArtwork.title} />
-        <h2>{visibleArtwork.title}</h2>
-        <p><strong>Medium:</strong> {visibleArtwork.media}</p>
-        <p><strong>Date:</strong> {visibleArtwork.date}</p>
-        <p>{visibleArtwork.description}</p>
+      <div className="artwork-image-wrapper">
+        <div className="artwork-image-inner" onClick={handleNext} style={{ cursor: 'pointer' }}>
+          {previousArtwork && previousArtwork.id !== currentArtwork.id && (
+            <img
+              src={previousArtwork.imageURL}
+              alt={previousArtwork.title}
+              className="artwork-image fading-out"
+              style={{ position: 'absolute' }}
+            />
+          )}
+          <img
+            src={currentArtwork.imageURL}
+            alt={currentArtwork.title}
+            className={`artwork-image ${transitioning ? 'fading-in' : ''}`}
+          />
+        </div>
+      </div>
+
+      <div className="artwork-detail">
+        <h2>{currentArtwork.title}</h2>
+        <p><strong>Medium:</strong> {currentArtwork.media}</p>
+        <p><strong>Date:</strong> {currentArtwork.date}</p>
+        <p>{currentArtwork.description}</p>
       </div>
     </div>
   );
