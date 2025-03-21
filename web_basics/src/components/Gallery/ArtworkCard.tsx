@@ -1,9 +1,18 @@
-import React from 'react';
+// src/components/Gallery/ArtworkCard.tsx
 
-const ArtworkCard: React.FC = () => {
+import React from 'react';
+import './ArtworkCard.css';
+import { Artwork } from './useGallery';
+
+interface ArtworkCardProps {
+  artwork: Artwork;
+}
+
+const ArtworkCard: React.FC<ArtworkCardProps> = ({ artwork }) => {
   return (
     <div className="artwork-card">
-      {/* TODO: Display thumbnail image and title */}
+      <img src={artwork.imageURL} alt={artwork.title} />
+      <div className="artwork-card-title">{artwork.title}</div>
     </div>
   );
 };
