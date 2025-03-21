@@ -24,3 +24,8 @@
   font-family: var(--body-font-family);
   color: var(--text-color);
 }
+
+.artwork-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
