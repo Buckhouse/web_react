@@ -1,5 +1,3 @@
-// src/components/Gallery/Gallery.tsx
-
 import React from 'react';
 import useGallery from './useGallery';
 import ArtworkCard from './ArtworkCard';
@@ -11,7 +9,11 @@ const Gallery: React.FC = () => {
   return (
     <div className="gallery-grid">
       {artworks.map((art) => (
-        <ArtworkCard key={art.id} artwork={art} />
+        <ArtworkCard
+          key={art.id}
+          artwork={art}
+          className={art.featured ? 'featured' : ''}
+        />
       ))}
     </div>
   );

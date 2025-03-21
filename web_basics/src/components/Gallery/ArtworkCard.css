@@ -1,29 +1,38 @@
 /* src/components/Gallery/ArtworkCard.css */
 
+/* src/components/Gallery/ArtworkCard.css */
+
 .artwork-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.artwork-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-.artwork-card-title {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: var(--body-font-family);
-  color: var(--text-color);
-}
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: var(--bg-white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .artwork-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .artwork-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .artwork-card-title {
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    font-family: var(--body-font-family);
+    background-color: var(--bg-white);
+  }
 
 .artwork-card-link {
     text-decoration: none;
