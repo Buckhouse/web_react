@@ -1,11 +1,4 @@
-/* index.css or App.css */
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  /* If you want the entire app centered, put a max-width here. */
-  margin: 0 auto;
-  max-width: 1200px; /* or any width you prefer */
+.content {
+  margin-top: 90px; /* Space for the fixed navbar */
+  padding: 1rem;
 }
