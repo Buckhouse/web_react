@@ -5,47 +5,55 @@
 
 @font-face {
     font-family: 'Pitch Sans';
-    src: url('../fonts/PitchSansApp-Regular.woff2') format('woff2'),
-         url('../fonts/PitchSansApp-Medium.woff2') format('woff2');
+    src: url('/fonts/PitchSansApp-Regular.woff2') format('woff2'),
+         url('/fonts/PitchSansApp-Medium.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Unica77';
-    src: url('../fonts/Unica77LLTT-Bold.woff2') format('woff2'),
-         url('../fonts/Unica77LLTT-Regular.woff') format('woff');
+    src: url('/fonts/Unica77LLTT-Bold.woff2') format('woff2'),
+         url('/fonts/Unica77LLTT-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Unica77';
-    src: url('../fonts/Unica77LLTT-Bold.woff2') format('woff2'),
-         url('../fonts/Unica77LLTT-Regular.woff') format('woff');
+    src: url('/fonts/Unica77LLTT-Bold.woff2') format('woff2'),
+         url('/fonts/Unica77LLTT-Regular.woff') format('woff');
     font-weight: 700;
     font-style: bold;
 }
 
 @font-face {
     font-family: 'Unica77';
-    src: url('../fonts/Unica77LLSub-MediumSubset.woff2') format('woff2'),
-         url('../fonts/Unica77LLSub-MediumSubset.woff') format('woff');
+    src: url('/fonts/Unica77LLWeb-Medium.woff2') format('woff2'),
+         url('/fonts/Unica77LLWeb-Medium.woff') format('woff');
     font-weight: 600;
     font-style: medium;
 }
 
 @font-face {
     font-family: 'FinancierDisplay';
-    src: url('../fonts/FinancierDisplayApp-Semibold.woff2') format('woff2');
+    src: url('/fonts/FinancierDisplayApp-Semibold.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Rosart-Regular';
-    src: url('../fonts/Rosart-Regular.woff2') format('woff2');
+    src: url('/fonts/Rosart-Regular.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'Rosart-Bold';
+    src: url('/fonts/Rosart-Bold.woff') format('woff');
+}
 
+@font-face {
+    font-family: 'Rosart-Bold';
+    src: url('/fonts/Rosart-BoldItalic.woff') format('woff');
+}
 /* Design Tokens */
 :root {
     /* Colors */

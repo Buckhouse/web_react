@@ -4,6 +4,7 @@ import Gallery from './components/Gallery/Gallery';
 import ArtworkDetail from './components/Gallery/ArtworkDetail';
 import Navbar from './components/Navbar/Navbar';
 import './App.css';
+import './styles/globals.css'; // Import global styles;
 
 const App: React.FC = () => {
   return (
