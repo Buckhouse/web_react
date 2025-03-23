@@ -7,6 +7,8 @@ import './App.css';
 import './styles/globals.css'; // Import global styles;
 import Design from './pages/Design';
 import Library from './pages/Library';
+import About from './pages/About';
+import Film from './pages/Film';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +20,8 @@ const App: React.FC = () => {
           <Route path="/art/:id" element={<ArtworkDetail />} />
           <Route path="/design" element={<Design />} />
           <Route path="/library" element={<Library />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/film" element={<Film />} />
         </Routes>
       </div>
     </Router>
