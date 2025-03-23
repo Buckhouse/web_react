@@ -61,13 +61,13 @@ const ArtworkDetail: React.FC = () => {
     <div className="artwork-detail-container">
       <div className="button-group">
         <button className="image-button" onClick={handlePrevious}>
-            <img src="${import.meta.env.BASE_URL}images/left.jpg" alt="Previous" />
+            <img src="/images/left.jpg" alt="Previous" />
         </button>
         <button className="image-button" onClick={handleBackToGallery}>
-            <img src="${import.meta.env.BASE_URL}images/gallery_button.jpg" alt="Gallery" />
+            <img src="/images/gallery_button.jpg" alt="Gallery" />
         </button>
         <button className="image-button" onClick={handleNext}>
-            <img src="${import.meta.env.BASE_URL}images/right.jpg" alt="Next" />
+            <img src="/images/right.jpg" alt="Next" />
         </button>
         </div>
 
