@@ -8,7 +8,7 @@ interface ArtworkCardProps {
   className?: string;
 }
 
-const ArtworkCard: React.FC<ArtworkCardProps> = ({ artwork, className = '' }) => {
+const ArtworkCard: React.FC<ArtworkCardProps> = ({ artwork, className: _className }) => {
   return (
     <Link to={`/art/${artwork.id}`} className="artwork-card-link">
   {/* Square container for the image only */}

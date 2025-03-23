@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react';
 import '../styles/About.css';
 
+// Global declaration for window.lucide
+declare global {
+  interface Window {
+    lucide?: {
+      createIcons: () => void;
+    };
+  }
+}
+
 const About: React.FC = () => {
   useEffect(() => {
-    // Optional: initialize Lucide icons if you're using them
     if (window.lucide) {
       window.lucide.createIcons();
     }
