@@ -122,3 +122,25 @@
       display: flex;
     }
   }
+
+  .navbar-newsletter {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: var(--menu-font-family);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .navbar-menu a:hover:not(.navbar-newsletter) {
+    color: var(--primary-hover-color);
+    text-shadow: 0 0 5px white;
+    transition: text-shadow 0.3s ease, color 0.2s ease;
+  }
+
+  .navbar-newsletter:hover {
+    background-color: var(--primary-hover-color) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }

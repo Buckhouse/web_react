@@ -1,13 +1,9 @@
-import { useState } from 'react'; //Import useState Hook: This React Hook adds state to our component. 
-                                  // It tracks whether the mobile menu is open or closed.
-import './Navbar.css'; // this is all the styling for the navbar
-
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 function Navbar() {
-    //A boolean state variable (initially false)
-    const [isOpen, setIsOpen] = useState(false); 
-  
-  //This function flips the value of isOpen when called.
+  const [isOpen, setIsOpen] = useState(false); 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -15,30 +11,49 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-      
-        
+
         {/* Desktop Menu */}
         <ul className="navbar-menu">
-        <li><a href="/">✎ Art</a></li>
-          <li><a href="/design">☎ 24-Hour Hotline</a></li>
-          <li><a href="/library">📖 library</a></li>
-          <li><a href="/film">🎬 Film</a></li>
-          <li><a href="/about">👤 Buckhouse</a></li>
+          <li><Link to="/">✎ Art</Link></li>
+          <li><Link to="/design">☎ 24-Hour Hotline</Link></li>
+          <li><Link to="/library">📖 Library</Link></li>
+          <li><Link to="/film">🎬 Film</Link></li>
+          <li><Link to="/about">👤 Buckhouse</Link></li>
+          <li>
+            <a
+                href="https://jamesbuckhouse.substack.com/"
+                className="navbar-newsletter"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📰 Newsletter
+            </a>
+            </li>
         </ul>
-        
+
         {/* Hamburger Icon */}
         <div className="navbar-hamburger" onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
-        
+
         {/* Mobile Menu */}
         <ul className={`navbar-mobile-menu ${isOpen ? 'active' : ''}`}>
-          <li><a href="/design">☎ 24-Hour Hotline</a></li>
-          <li><a href="/library">📖 library</a></li>
-          <li><a href="/film">🎬 Film</a></li>
-          <li><a href="/about">👤 Buckhouse</a></li>
+          <li><Link to="/design" onClick={toggleMenu}>☎ 24-Hour Hotline</Link></li>
+          <li><Link to="/library" onClick={toggleMenu}>📖 Library</Link></li>
+          <li><Link to="/film" onClick={toggleMenu}>🎬 Film</Link></li>
+          <li><Link to="/about" onClick={toggleMenu}>👤 Buckhouse</Link></li>
+          <li>
+            <a
+                href="https://jamesbuckhouse.substack.com/"
+                className="navbar-newsletter"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📰 Newsletter
+            </a>
+            </li>
         </ul>
       </div>
     </nav>

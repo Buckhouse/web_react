@@ -59,11 +59,17 @@ const ArtworkDetail: React.FC = () => {
 
   return (
     <div className="artwork-detail-container">
-      <div className="detail-buttons">
-        <button onClick={handlePrevious}>← Previous</button>
-        <button onClick={handleBackToGallery}>⤺ Gallery</button>
-        <button onClick={handleNext}>Next →</button>
-      </div>
+      <div className="button-group">
+        <button className="image-button" onClick={handlePrevious}>
+            <img src="/images/left.jpg" alt="Previous" />
+        </button>
+        <button className="image-button" onClick={handleBackToGallery}>
+            <img src="/images/gallery_button.jpg" alt="Gallery" />
+        </button>
+        <button className="image-button" onClick={handleNext}>
+            <img src="/images/right.jpg" alt="Next" />
+        </button>
+        </div>
 
       <div className="artwork-image-wrapper">
         <div className="artwork-image-inner" onClick={handleNext} style={{ cursor: 'pointer' }}>
